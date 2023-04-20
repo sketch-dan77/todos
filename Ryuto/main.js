@@ -1,35 +1,12 @@
-var todos = [
-  {
-    id: 1,
-    status: false,
-    text: "ゴミ出し",
-  },
-  {
-    id: 2,
-    status: false,
-    text: "掃除",
-  },
-  {
-    id: 3,
-    status: true,
-    text: "支払い",
-  },
-  {
-    id: 4,
-    status: false,
-    text: "買い物",
-  },
-  {
-    id: 5,
-    status: true,
-    text: "風呂掃除",
-  },
-];
+var todosString = localStorage.getItem("todos")
+var todos = JSON.parse(todosString) ||[]
+  
 
 var selected = "All";
 
 var list = document.getElementById("list");
 function render(ls = todos) {
+  localStorage.setItem("todos",JSON.stringify(ls))
   const tmp = ls.filter(function (t) {
     var s = true;
     switch (selected) {
