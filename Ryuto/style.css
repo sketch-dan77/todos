@@ -121,7 +121,7 @@ h1 {
     cursor: pointer;
 }
 #list > .row > .checkbox.active {
-    color: blueviolet;
+    color: yellow;
 }
 
 .actions {
